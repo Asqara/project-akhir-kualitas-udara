@@ -1,7 +1,6 @@
-"""
-Dashboard Analisis Kualitas Udara Beijing (Air Quality Dataset - PRSA)
-Jalankan dengan: streamlit run dashboard.py
-"""
+
+
+import os
 
 import numpy as np
 import pandas as pd
@@ -11,6 +10,9 @@ import seaborn as sns
 import streamlit as st
 
 sns.set_theme(style="whitegrid")
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_PATH = os.path.join(BASE_DIR, "main_data.csv.gz")
 
 # --------------------------------------------------------------------------
 # Konfigurasi halaman
@@ -67,7 +69,7 @@ def haversine(lat1, lon1, lat2, lon2):
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("main_data.csv.gz", parse_dates=["datetime"])
+    df = pd.read_csv(DATA_PATH, parse_dates=["datetime"])
     if "pm25_category" not in df.columns:
         df["pm25_category"] = pd.cut(df["PM2.5"], bins=PM25_BINS, labels=PM25_LABELS)
     else:

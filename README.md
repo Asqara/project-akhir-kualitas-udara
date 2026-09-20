@@ -41,11 +41,3 @@ streamlit run dashboard.py
 Dashboard akan terbuka otomatis di `http://localhost:8501`. Gunakan sidebar untuk
 memfilter rentang tanggal, stasiun, dan polutan.
 
-## Deploy ke Streamlit Community Cloud (opsional, untuk nilai lebih)
-
-1. Push seluruh folder proyek ini (termasuk `dashboard/main_data.csv.gz`) ke repository GitHub.
-2. Buka [share.streamlit.io](https://share.streamlit.io), hubungkan repo tersebut.
-3. Set **Main file path** ke `dashboard/dashboard.py`.
-4. Setelah deploy berhasil, tempelkan URL dashboard ke file `url.txt`.
-
-# project-akhir-kualitas-udara
